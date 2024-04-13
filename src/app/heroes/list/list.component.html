@@ -1,0 +1,46 @@
+
+<h3>Listado de Heroes</h3>
+
+<!-- cambio XXXX por {{ deleteHero }}-->
+
+
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <h3>Heroe borrado<small class="text-danger"> {{ deletedHero }}</small></h3>
+</div>
+
+<!-- <ng-template> es un <div> que no existe, solo va a mostrar su contenido-->
+<!-- el problema del <div> es que me rompe el estilo de mi pagina-->
+<!-- por lo que tengo que hacer consideraciones adicionales a mi pagina -->
+
+<!-- el <div> puede romper la estructura de mi HTML de la pagina -->
+
+<ng-template #nothingWasDeleted> <!-- #nothingWasDeleted es llamado en Angular, una referencia local-->
+
+  <h3>No ha borrado nada.</h3> <!-- no va a construir nada solo va a mostrar su contenido-->
+
+  <!--<h3 *ngIf="!deletedHero">No ha borrado nada.</h3>-->
+</ng-template>
+
+<!-- <ng-template> no es un elemento HTML-->
+
+<button
+*ngIf="heroNames.length > 0"
+(click)="removeLastHero()"
+class="btn btn-outline-danger">
+  Borrar ultimo heroe
+</button>
+
+<!-- una Class CSS que viene en el Bootstrap-->
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames"
+    class="list-group-item">
+    <strong>{{ name }}</strong>
+
+    </li>
+
+<!-- usamos la Interpolacion-->
+
+
+  <!-- cada elemento de la lista es una clase CSS -->
+</ul>

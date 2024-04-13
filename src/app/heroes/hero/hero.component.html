@@ -1,0 +1,49 @@
+
+<h1> {{name}} ... esto viene de hero.component.html </h1>
+
+<!-- <p>hero works! ...desde hero.component.html</p>-->
+
+<!-- to create a definition List-->
+
+<dl>
+  <!-- to create a table description -->
+  <td>Nombre:</td>
+  <!--to create a description-->
+  <dd> nombre: {{name}} </dd>
+
+  <td>Edad</td>
+  <dd> edad: {{age}}  </dd>
+
+  <!--mandar a llamar la invocacion de una funcion-->
+
+  <td>Metodo:</td>
+  <dd> {{ getHeroDescription()}}  </dd>
+
+  <td>Capitalizado:</td>
+  <dd> {{capitalizeName}}  </dd>
+
+</dl>
+
+<!-- *ngIf es una DIRECTIVA <section *ngIf="showSection"> -->
+
+<button
+ *ngIf="name !== 'Spiderman'"
+(click)="changeHero()"
+class="btn btn-primary mx-2">
+  Cambiar Heroe
+</button>
+
+<button
+*ngIf="age !== 55"
+(click)="changeAge()"
+class="btn btn-primary">
+  Cambiar Edad
+</button>
+
+<button
+  (click)="resetForm()"
+  class="btn btn-primary mx-2">
+  Reset
+</button>
+
+<!--cualquier expresion ente {} es JavaScipt-->
