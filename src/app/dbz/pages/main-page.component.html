@@ -1,0 +1,69 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+
+
+    <dbz-list [characterList]="characters"
+              (onDelete)="onDeleteCharacter($event)"></dbz-list>
+
+    <!--
+
+    <h4>Listado</h4>
+    <ul class ="list-group">
+      <li class="list-group-item">Krillin - 500</li>
+      <li class="list-group-item">Goku - 10,000</li>
+    </ul>
+
+  -->
+
+  </div>
+
+  <div class="col">
+
+
+
+    <!-- add-character-->
+
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+<!--
+
+  () si son patentesis son EVENTOS, si son [ ] son atributos ... entonces el evento de un nuevo character se expresa asi (onNewCharacter)
+
+    <h4>Agregar personaje</h4>
+
+    <form class="row">
+
+      <input type="text" class="form-control mb-2" placeholder="Nombre">
+
+      <input type="number" class="form-control mb-2" placeholder="Poder">
+
+      <button type="submit" class="btn btn-primary">
+        Agregar
+      </button>
+
+
+    </form>
+
+  -->
+
+  </div>
+
+</div>
+
+
+
+<!-- descripcion de la estructura:
+
+  en definitiva el HTML debe tener unicamente los selectores de los COMPONENTES
+cuyo HTML asociado se presentaran en el SCREEN como un todo
+
+a traves del Selector en el HTML se logra la relacion con los Components
+
+
+-->
+
+
